@@ -1,3 +1,8 @@
+{{
+    config(
+        materialized = 'view'
+    )
+}}
 WITH stg_listings AS (
     SELECT *
     FROM {{ ref('stg_listings') }}
