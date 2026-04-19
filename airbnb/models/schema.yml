@@ -6,14 +6,18 @@ models:
       - minimum_row_count:
           arguments:
             min_row_count: 1000
+  
+    description: Cleansed table which contains Airbnb listings.
 
     columns:
       - name: listing_id
+        description: Primary key for the listing
         data_tests:
           - unique
           - not_null
       
       - name: host_id
+        description: The host's id. References the host table
         data_tests:
           - not_null
           - relationships:
@@ -22,6 +26,7 @@ models:
                 field: host_id
 
       - name: room_type
+        description: Type of the room/apartment
         data_tests:
           - accepted_values:
               arguments:
