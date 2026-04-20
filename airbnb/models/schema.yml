@@ -73,3 +73,9 @@ models:
 
       - name: created_at
         data_type: timestamp
+  
+  - name: dim_listings_with_hosts
+    description: listings with hosts.
+    data_tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: source('airbnb', 'listings')
