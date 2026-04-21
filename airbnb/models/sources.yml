@@ -6,6 +6,11 @@ sources:
     tables:
       - name: listings
         identifier: raw_listings
+        columns:
+          - name: room_type
+            data_tests:
+              - dbt_expectations.expect_column_distinct_values_to_contain_set:
+                  value_set: ['Private room', 'Entire home/apt', 'Hotel room', 'Shared room']
 
       - name: hosts
         identifier: raw_hosts
