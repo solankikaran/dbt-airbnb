@@ -22,6 +22,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+seeds:
+  airbnb:
+    +schema: mapping
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -32,8 +35,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   airbnb:
     stg:
-      +materialized: view
+      +materialized: ephemeral
+
     dim:
       +materialized: table
+      +schema: dim
+
     fct:
       +materialized: table
+      +schema: fct

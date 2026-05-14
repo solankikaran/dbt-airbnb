@@ -1,7 +1,9 @@
-snapshot:
+snapshots:
   - name: scd_raw_listings
     relation: source('raw', 'listings')
     config:
+      database: airbnb
+      schema: snapshot
       unique_key: id
       strategy: timestamp
       updated_at: updated_at
