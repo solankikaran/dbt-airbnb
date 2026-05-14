@@ -1,4 +1,4 @@
-WITH stg_listings AS (
+WITH raw_listings AS (
     SELECT *
     FROM {{ source('raw', 'listings') }}
 )
@@ -12,4 +12,4 @@ SELECT
    price AS price_str,
    created_at,
    updated_at
-FROM stg_listings
+FROM raw_listings

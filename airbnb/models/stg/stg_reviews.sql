@@ -1,4 +1,4 @@
-WITH stg_reviews AS (
+WITH raw_reviews AS (
     SELECT *
     FROM {{ source('raw', 'reviews') }}
 )
@@ -8,4 +8,4 @@ SELECT
     reviewer_name,
     comments AS review_text,
     sentiment AS review_sentiment
-FROM stg_reviews
+FROM raw_reviews

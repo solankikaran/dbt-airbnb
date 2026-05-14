@@ -1,4 +1,4 @@
-WITH stg_hosts AS (
+WITH raw_hosts AS (
     SELECT *
     FROM {{ source('raw', 'hosts') }}
 )
@@ -8,4 +8,4 @@ SELECT
     is_superhost,
     created_at,
     updated_at
-FROM stg_hosts
+FROM raw_hosts
