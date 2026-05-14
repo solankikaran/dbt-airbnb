@@ -31,4 +31,4 @@ models:
         data_type: timestamp
 
       - name: created_at
-        data_type: timestamp 
+        data_type: timestamp
