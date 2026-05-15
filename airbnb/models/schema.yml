@@ -69,3 +69,27 @@ models:
         description: '{{ doc("dim_listings_cleansed_minimum_nights") }}'
         data_tests:
           - positive_values
+  
+  - name: fct_reviews
+    description: Cleansed reviews tables.
+    columns:
+      - name: listing_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_listings_cleansed')
+                field: listing_id
+      
+      - name: reviewer_name
+        data_tests:
+          - not_null
+      
+      - name: review_text
+        data_tests:
+          - not_null
+      
+      - name: review_sentiment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['positive', 'neutral', 'negative']

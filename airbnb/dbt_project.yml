@@ -42,5 +42,4 @@ models:
       +schema: dim
 
     fct:
-      +materialized: table
       +schema: fct
