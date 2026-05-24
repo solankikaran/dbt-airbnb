@@ -98,7 +98,7 @@ models:
     data_tests:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           arguments:
-            compare_model: source('airbnb', 'listings')
+            compare_model: source('raw', 'listings')
 
     columns:
       - name: price

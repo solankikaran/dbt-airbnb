@@ -5,3 +5,5 @@ logs/
 
 .user.yml
 profiles.yml
+
+.env
