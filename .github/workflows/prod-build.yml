@@ -3,7 +3,7 @@ name: Prod deploy (on merge to main / manual)
 on:
   push:
     branches: ["main"]
-  workflow_dispath:
+  workflow_dispatch:
 
 permissions:
   contents: read
