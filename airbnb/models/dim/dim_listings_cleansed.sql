@@ -14,6 +14,7 @@ SELECT
     END AS minimum_nights,
     host_id,
     REPLACE(price_str, '$')::NUMERIC(10, 2) AS price,
+    price_str,
     created_at,
     updated_at
 FROM stg_listings
